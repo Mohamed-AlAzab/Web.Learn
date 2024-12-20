@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css.css">
+    <title>Web Learn</title>
+  </head>
+  <body>
+    <header>
+        <div class="logo">
+            <h1>Web Learn</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">HTML</a></li>
+                <li><a class="css" href="">CSS</a></li>
+                <li><a href="#">JS</a></li>
+                <li><a href="php.html">PHP</a></li>
+                <li><a href="#">MySQL</a></li>
+            </ul>
+        </nav>
+    </header>   
+    <div class="page">
+      <button class="toggle-btn" onclick="toggleSidebar()">></button>
+      <aside class="sidebar">
+        <ul>
+          <li><a href="#CSS">Basics of CSS</a></li>
+          <li><a href="#CSS selector"> CSS Selectors</a></li>
+          <li><a href="#types">Types of CSS</a></li>
+          <li><a href="#box model">CSS Box Model</a></li>
+          <li><a href="#properties">Common CSS Properties</a></li>
+          <li><a href="#concepts">Advanced Concepts</a></li>
+          <li><a href="#animation"> CSS Animation</a></li>
+        </ul>
+      </aside>
+      <div class="content">
+        <div class="main">
+          <div id="CSS">
+            <h1>1. Basics of CSS</h1>
+            <h3>
+              allows you to apply styles like colors, fonts, layouts, and
+              spacing to elements on a web page
+            </h3>
+            <h2>
+              <p><u>Syntax:</u></p>
+            </h2>
+            <h4><p>CSS follows this basic syntax:</p></h4>
+            <img src="photo/css_photo/css1.png" alt="syntax" />
+            <h4><p>Selector: Specifies the HTML element to style.</p></h4>
+            <h4>
+              <p>
+                Property: Defines what aspect of the element to style (e.g.,
+                color, font-size).
+              </p>
+            </h4>
+            <h4><p>Value: Specifies the value for the property.</p></h4>
+
+            <h2>Example:</h2>
+
+            <img src="photo/css_photo/css2.png" alt="value" />
+
+            <p>
+              This will make all
+              <code>&lt;p&gt;</code>
+              elements have blue text with a font size of 16 pixels
+            </p>
+          </div>
+
+          <div id="CSS selector">
+            <h1>2. CSS Selectors</h1>
+            <b
+              >1- Selectors determine which HTML elements the styles will apply
+              to. Common types include:</b
+            >
+
+            <p>2- Universal Selector (*): Targets all elements.</p>
+            <img src="photo/css_photo/css3.png" alt="value" />
+            <h3>
+              <p>*Type Selector: Targets specific elements</p>
+            </h3>
+            <img src="photo/css_photo/css4.png" alt="value" />
+
+            <h3>
+              <p>
+                Class Selector (.class): Targets elements with a specific class
+              </p>
+            </h3>
+
+            <img src="photo/css_photo/css5.png" alt="value" />
+
+            <h3>
+              <p>ID Selector (#id): Targets a unique element by its ID.</p>
+            </h3>
+            <img src="photo/css_photo/css6.png" alt="value" />
+
+            <h3><p>Group Selector (A, B): Combines multiple selectors.</p></h3>
+            <img src="photo/css_photo/css7.png" alt="value" />
+            <h3>
+              <p>
+                Descendant Selector (A B): Targets elements inside another
+                element.
+              </p>
+            </h3>
+            <img src="photo/css_photo/css8.png" alt="value" />
+          </div>
+
+          <div id="types">
+            <h1>3. Types of CSS</h1>
+            <h2>
+              <p>
+                1.Inline CSS: Applied directly within an HTML element using the
+                style attribute.
+              </p>
+            </h2>
+            <p>the code:</p>
+            <img src="photo/css_photo/css9.png" alt="value" />
+
+            <h2>
+              <p>
+                2.Internal CSS: Defined in a &lt;style&gt; tag within the
+                &lt;head&gt; of an HTML document.
+              </p>
+            </h2>
+            <img src="photo/css_photo/css10.png" alt="value" />
+
+            <h2>
+              <p>
+                3.External CSS: Written in a separate .css file and linked using
+                &lt;link&gt; in HTML.
+              </p>
+            </h2>
+            <img src="photo/css_photo/css11.png" alt="value" />
+          </div>
+
+          <div id="box model">
+            <h1>4. CSS Box Model</h1>
+            <h3>
+              The box model describes the structure of elements in terms of:
+            </h3>
+            <p>* Content: The actual content inside the box.</p>
+            <p>* Padding: Space between content and border.</p>
+            <p>* Border: The boundary surrounding the padding.</p>
+            <p>* Margin: Space outside the border between elements.</p>
+
+            <h2>Example:</h2>
+            <img src="photo/css_photo/css12.png" alt="value" />
+          </div>
+
+          <div id="properties">
+            <h1>5. Common CSS Properties</h1>
+            <h3>1.Text and Font:</h3>
+
+            <img src="photo/css_photo/css13.png" alt="value" />
+            <h3>2.Background:</h3>
+            <img src="photo/css_photo/css14.png" alt="value" />
+            <h3>3.Borders and Shadows:</h3>
+            <img src="photo/css_photo/css15.png" alt="value" />
+            <h3>4.Spacing:</h3>
+            <img src="photo/css_photo/css16.png" alt="value" />
+            <h3>5.Display and Positioning:</h3>
+            <img src="photo/css_photo/css17.png" alt="value" />
+          </div>
+
+          <div id="concepts">
+            <h1>6. Advanced Concepts</h1>
+            <h3>1.Flexbox: Used for creating responsive layouts.</h3>
+            <img src="photo/css_photo/css18.png" alt="value" />
+
+            <h3>2.Grid: Used for creating grid-based layouts.</h3>
+            <img src="photo/css_photo/css19.png" alt="value" />
+            <h3>3.Media Queries: Used for responsive design.</h3>
+            <img src="photo/css_photo/css20.png" alt="value" />
+          </div>
+
+          <div id="animation">
+            <h1>7. CSS Animation</h1>
+            <h3>CSS can animate properties.</h3>
+            <img src="photo/css_photo/css21.png" alt="value" />
+          </div>
+        </div>
+        <footer>
+            <div class="inner-footer">
+                <p>Made by .....</p>
+            </div>
+        </footer>
+      </div>
+    </div>
+    <script>
+      function toggleSidebar() {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.classList.toggle("hidden");
+      }
+    </script>
+  </body>
+</html>

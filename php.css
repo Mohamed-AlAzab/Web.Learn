@@ -81,18 +81,24 @@ header nav a:hover{
     overflow: hidden;
 }
 
-/* Start style sidebar */
+/* Start sidebar style */
 .sidebar {
     width: 200px;
     background-color: var(--hfColor);
     color: var(--white);
     padding: 10px;
-    border-right: solid white;
+    border-right: solid var(--white);
     height: calc(100vh - 100px);
     position: sticky;
     top: 80px;
     overflow-y: auto;
     scrollbar-width: none;
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+}
+
+.sidebar.hidden {
+    transform: translateX(-220px);
 }
 
 .sidebar::-webkit-scrollbar {
@@ -108,7 +114,7 @@ header nav a:hover{
 }
 
 .sidebar li a {
-    color: white;
+    color: var(--white);
     text-decoration: none;
     font-weight: bold;
     padding: 10px;
@@ -118,10 +124,31 @@ header nav a:hover{
 }
 
 .sidebar li a:hover {
-    background-color: white;
+    background-color: var(--white);
     color: orange;
 }
-/* end style sidebar */
+/* End sidebar style */
+
+/* Start toggle button style */
+.toggle-btn {
+    position: absolute;
+    top: 60px;
+    left: 200px;
+    background-color: var(--hfColor);
+    color: var(--white);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50px;
+    font-size: 16px;
+    z-index: 1000;
+    transition: left 0.3s ease;
+}
+
+.sidebar.hidden ~ .toggle-btn {
+    left: -20px;
+}
+/* End toggle button style */
 
 /* Start style content */
 .content {
@@ -133,6 +160,12 @@ header nav a:hover{
     color: var(--white);
     background-color: var(--hfColor);
     height: calc(100vh - 90px);
+    margin-left: 0px;
+    transition: margin-left 0.3s ease;
+}
+
+.sidebar.hidden ~ .content {
+    margin-left: -200px;
 }
 
 .content::-webkit-scrollbar {
@@ -140,7 +173,6 @@ header nav a:hover{
 }
 
 .content::-webkit-scrollbar-thumb {
-    background: #555;
     border-radius: 5px;
 }
 
@@ -158,6 +190,7 @@ header nav a:hover{
 .content .main h3 {
     cursor: pointer;
     background: #333;
+    font-weight: 700;
     color: #ffffff;
     padding: 15px 20px;
     margin: 10px 0;
@@ -188,7 +221,7 @@ pre.code-block {
     border: 2px solid #ffffff; 
     margin: 20px 0; 
     text-align: left; 
-  }
+}
   
 pre.code-block:hover {
 background-color: #333333;

@@ -64,7 +64,7 @@ header nav a {
     transition: background-color 0.3s;
 }
 
-header nav li a.php{
+header nav li a.js{
     background-color: white;
     color: orange;
 }

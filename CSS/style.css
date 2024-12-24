@@ -2,6 +2,7 @@
 :root {
     --hfColor: #101010;
     --white: #ffffff;
+    --highlightColor: #e67e22;
 }
 /* Start set style */
 * {
@@ -63,7 +64,7 @@ header nav a {
     transition: background-color 0.3s;
 }
 
-header nav li a.css{
+header nav li:first-of-type a{
     background-color: var(--white);
     color: orange;
 }
@@ -132,23 +133,26 @@ header nav a:hover{
 
 /* Start toggle button style */
 .toggle-btn {
-    position: absolute;
-    top: 60px;
-    left: 200px;
-    background-color: var(--hfColor);
-    color: var(--white);
+    position: fixed;
+    top: 90px;
+    left: 220px;
+    background-color: var(--highlightColor);
+    color: var(--hfColor);
     border: none;
     padding: 10px 15px;
     cursor: pointer;
-    border-radius: 50px;
-    font-size: 16px;
-    z-index: 1000;
+    border-radius: 0 4px 4px 0;
+    font-size: 18px;
+    z-index: 1001;
     transition: left 0.3s ease;
-}
-
-.sidebar.hidden ~ .toggle-btn {
-    left: -20px;
-}
+  }
+  
+  .toggle-btn.open {
+    left: 0;
+    background-color: var(--highlightColor);
+    color: var(--hfColor);
+    border-radius: 0 4px 4px 0;
+  }
 /* End toggle button style */
 
 /* Start content style */
@@ -185,34 +189,48 @@ header nav a:hover{
 /* Start main content style */
 .content .main {
     padding: 10px;
+    background: var(--hfColor);
     flex: 1;
 }
 
-/* .content .main h3 {
-    cursor: pointer;
-    background: #333;
-    color: #ffffff; 
-    padding: 10px;
-    margin: 0;
-    border-bottom: 2px solid white;
-    transition: background 0.3s ease, color 0.3s ease;
+.content .main h1 {
+    font-size: 2.5em;
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 10px;
 }
 
-.content .main h3:hover {
-    background: #444;
-    color: #fff; 
+.content .main h2 {
+    font-size: 2em;
+    color: var(--white);
+    margin-top: 20px;
 }
 
-.content .main .description {
-    background: #1a1a1a;
-    padding: 15px;
-    border: 1px solid #555;
-    color: #ccc;
-    display: block; 
-    opacity: 1;
-    transform: scaleY(1); 
-    transition: none;  
-} */
+.content .main h3 {
+    font-size: 1.2em;
+    color: var(--white);
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.content .main ul {
+    margin: 10px 0 20px 20px;
+    padding: 0;
+    list-style-type: disc;
+}
+
+.content .main ul li {
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+.content .main ul li strong {
+    color: var(--white);
+}
+
+.main div {
+    margin-bottom: 20px;
+}
 /* End main content style */
 
 /* Start of style footer */

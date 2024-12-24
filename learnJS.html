@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="php.css">
+    <link rel="stylesheet" href="CSS/learnJS.css">
     <title>JavaScript Learn</title>
   </head>
   <body>
@@ -14,11 +14,11 @@
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="html.html">HTML</a></li>
-          <li><a href="css.html">CSS</a></li>
+          <li><a href="learnHTML.html">HTML</a></li>
+          <li><a href="learnCSS.html">CSS</a></li>
           <li><a class="js" href="">JS</a></li>
-          <li><a href="php.html">PHP</a></li>
-          <li><a href="mysql.html">MySQL</a></li>
+          <li><a href="learnPHP.html">PHP</a></li>
+          <li><a href="learnMySQL.html">MySQL</a></li>
         </ul>
       </nav>
     </header>
@@ -42,8 +42,13 @@
       </aside>
       <div class="content">
         <div class="main">
-            <h1>Learn JavaScript, Step by Step!</h1>
-            <p>Discover the basics of JavaScript development.</p>
+            <div class="content-header">
+                <div class="content-header-text">
+                    <h1>Learn JavaScript, Step by Step!</h1>
+                    <p>Discover the basics of JavaScript development.</p>
+                </div>
+                <button class="toggle-all-btn" onclick="toggleAllContent()">Open/Close content</button>
+            </div>
 
             <h3 onclick="toggleContent('introJsDescription')">Introduction to JavaScript</h3>
             <div id="introJsDescription" class="description">
@@ -584,24 +589,48 @@
       </footer>
     </div>
     <script>
-      window.onload = function() {
-        const descriptions = document.querySelectorAll('.description');
-        descriptions.forEach(description => {
-          description.style.display = 'none'; 
-        });
-      };
-      function toggleContent(elementId) {
-        const content = document.getElementById(elementId);
-        if (content.style.display === "none") {
-          content.style.display = "block"; 
-        } else {
-          content.style.display = "none"; 
+        window.onload = function () {
+          const descriptions = document.querySelectorAll(".description");
+          descriptions.forEach((description) => {
+            description.style.display = "none";
+          });
+          const toggleBtn = document.querySelector(".toggle-btn");
+          toggleBtn.textContent = "<";
+        };
+  
+        function toggleContent(elementId) {
+          const content = document.getElementById(elementId);
+          if (content.style.display === "none") {
+            content.style.display = "block";
+          } else {
+            content.style.display = "none";
+          }
         }
-      }
-      function toggleSidebar() {
-            const sidebar = document.querySelector('.sidebar');
-            sidebar.classList.toggle('hidden');
+  
+        function toggleSidebar() {
+          const sidebar = document.querySelector(".sidebar");
+          const toggleBtn = document.querySelector(".toggle-btn");
+  
+          sidebar.classList.toggle("hidden");
+          toggleBtn.classList.toggle("open");
+  
+          if (toggleBtn.classList.contains("open")) {
+            toggleBtn.textContent = ">";
+          } else {
+            toggleBtn.textContent = "<";
+          }
         }
-    </script>
+  
+        function toggleAllContent() {
+          const descriptions = document.querySelectorAll(".description");
+          const areAllClosed = Array.from(descriptions).every(
+            (desc) => desc.style.display === "none"
+          );
+  
+          descriptions.forEach((description) => {
+            description.style.display = areAllClosed ? "block" : "none";
+          });
+        }
+      </script>
   </body>
 </html>

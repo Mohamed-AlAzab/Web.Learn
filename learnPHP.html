@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="php.css">
+    <link rel="stylesheet" href="CSS/learnPHP.css">
     <title>PHP Learn</title>
   </head>
   <body>
@@ -14,11 +14,11 @@
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="html.html">HTML</a></li>
-          <li><a href="css.html">CSS</a></li>
-          <li><a href="js.html">JS</a></li>
+          <li><a href="learnHTML.html">HTML</a></li>
+          <li><a href="learnCSS.html">CSS</a></li>
+          <li><a href="learnJS.html">JS</a></li>
           <li><a class="php" href="">PHP</a></li>
-          <li><a href="mysql.html">MySQL</a></li>
+          <li><a href="learnMySQL.html">MySQL</a></li>
         </ul>
       </nav>
     </header>
@@ -26,22 +26,30 @@
       <button class="toggle-btn" onclick="toggleSidebar()">></button>
       <aside class="sidebar">
         <ul>
-          <li><a href="#">PHP Basics</a></li>
-          <li><a href="#">PHP IF Condition</a></li>
-          <li><a href="#">PHP Arrays</a></li>
-          <li><a href="#">PHP Loops</a></li>
-          <li><a href="#">PHP OOP</a></li>
-          <li><a href="#">PHP and MySQL</a></li>
+          <li><a href="#introPhpDescription">Intro to php</a></li>
+          <li><a href="#phpSyntaxDescription">PHP Syntax</a></li>
+          <li><a href="#phpIfConditionsDescription">PHP If Conditions</a></li>
+          <li><a href="#phpArraysDescription">PHP Arrays</a></li>
+          <li><a href="#phpLoopsDescription">PHP Loops</a></li>
+          <li><a href="#phpOOPDescription">PHP OOP</a></li>
+          <li><a href="#phpFunctionsDescription">PHP with MySQL</a></li>
+
         </ul>
       </aside>
       <div class="content">
         <div class="main">
-          <h1>Learn PHP, Step by Step!</h1>
-          <p>Discover the basics of PHP development.</p>
+          
+          <div class="content-header">
+            <div class="content-header-text">
+              <h1>Learn PHP, Step by Step!</h1>
+              <p>Discover the basics of PHP development.</p>
+            </div>
+            <button class="toggle-all-btn" onclick="toggleAllContent()">Open/Close content</button>
+        </div>
 
           <!-- Introduction -->
           <h3 onclick="toggleContent('introPhpDescription')"> Introduction to PHP</h3>
-          <div id="introPhpDescription" class="description">
+          <div  id="introPhpDescription" class="description">
             <p>
               <span style="color: #FFAC1C; font-weight: 600; font-size: 1.2em;">What is PHP?</span>
             </p>
@@ -67,8 +75,8 @@
           </div>
 
           <!-- Syntax and Variables -->
-          <h3 onclick="toggleContent('phpSyntaxDescription')">Syntax and Variables in PHP</h3>
-          <div id="phpSyntaxDescription" class="description">
+          <h3  onclick="toggleContent('phpSyntaxDescription')">Syntax and Variables in PHP</h3>
+          <div id="phpSyntaxDescription"  class="description">
             <p>
               <span style="color: #FFAC1C; font-weight: bold; font-size: 1.2em;">Basic PHP Syntax</span>
             </p>
@@ -554,24 +562,48 @@ Cat meows.</pre>
       </footer>
     </div>
     <script>
-      window.onload = function() {
-        const descriptions = document.querySelectorAll('.description');
-        descriptions.forEach(description => {
-          description.style.display = 'none'; 
+      window.onload = function () {
+        const descriptions = document.querySelectorAll(".description");
+        descriptions.forEach((description) => {
+          description.style.display = "none";
         });
+        const toggleBtn = document.querySelector(".toggle-btn");
+        toggleBtn.textContent = "<";
       };
+
       function toggleContent(elementId) {
         const content = document.getElementById(elementId);
         if (content.style.display === "none") {
-          content.style.display = "block"; 
+          content.style.display = "block";
         } else {
-          content.style.display = "none"; 
+          content.style.display = "none";
         }
       }
+
       function toggleSidebar() {
-            const sidebar = document.querySelector('.sidebar');
-            sidebar.classList.toggle('hidden');
+        const sidebar = document.querySelector(".sidebar");
+        const toggleBtn = document.querySelector(".toggle-btn");
+
+        sidebar.classList.toggle("hidden");
+        toggleBtn.classList.toggle("open");
+
+        if (toggleBtn.classList.contains("open")) {
+          toggleBtn.textContent = ">";
+        } else {
+          toggleBtn.textContent = "<";
         }
+      }
+
+      function toggleAllContent() {
+        const descriptions = document.querySelectorAll(".description");
+        const areAllClosed = Array.from(descriptions).every(
+          (desc) => desc.style.display === "none"
+        );
+
+        descriptions.forEach((description) => {
+          description.style.display = areAllClosed ? "block" : "none";
+        });
+      }
     </script>
   </body>
 </html>

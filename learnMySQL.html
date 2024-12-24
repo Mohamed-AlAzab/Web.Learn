@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/learnMySQL.css" />
+    <title>MySQL Learn</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <h1>MySQL Learn</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="learnHTML.html">HTML</a></li>
+          <li><a href="learnCSS.html">CSS</a></li>
+          <li><a href="learnJS.html">JS</a></li>
+          <li><a href="learnPHP.html">PHP</a></li>
+          <li><a class="mysql" href="">MySQL</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="page">
+      <button class="toggle-btn" onclick="toggleSidebar()">></button>
+      <aside class="sidebar">
+        <ul>
+          <li><a href="#mysqlIntro">Introduction to MySQL</a></li>
+          <li><a href="#databaseConcepts">Database Concepts</a></li>
+          <li><a href="#basicCommands">Basic MySQL Commands</a></li>
+          <li><a href="#dataTypes">MySQL Data Types</a></li>
+          <li><a href="#queries">Writing Queries</a></li>
+          <li><a href="#joins">Joins in MySQL</a></li>
+          <li><a href="#indexes">Indexes</a></li>
+          <li><a href="#transactions">Transactions</a></li>
+          <li><a href="#backupRestore">Backup and Restore</a></li>
+          <li><a href="#practiceExamples">Practice Examples</a></li>
+          <li><a href="#conclusion">Conclusion</a></li>
+        </ul>
+      </aside>
+      <div class="content">
+        <div class="main">
+          
+          <div class="content-header">
+            <div class="content-header-text">
+              <h1>Learn MySQL, Step by Step!</h1>
+              <p>Master database management and querying with MySQL.</p>
+            </div>
+            <button class="toggle-all-btn" onclick="toggleAllContent()">Open/Close content</button>
+        </div>
+
+          <!-- Introduction to MySQL -->
+          <h3 onclick="toggleContent('mysqlIntro')">Introduction to MySQL</h3>
+          <div id="mysqlIntro" class="description">
+            <p>
+              <span style="color: #ffac1c; font-weight: 600; font-size: 1.2em"
+                >What is MySQL?</span
+              >
+            </p>
+            <p>
+              MySQL is an open-source relational database management system
+              (RDBMS) that uses Structured Query Language (SQL) to manage and
+              manipulate data. It is widely used for web applications and data
+              storage.
+            </p>
+          </div>
+
+          <!-- Database Concepts -->
+          <h3 onclick="toggleContent('databaseConcepts')">Database Concepts</h3>
+          <div id="databaseConcepts" class="description">
+            <p>
+              <span style="color: #ffac1c; font-weight: 600; font-size: 1.2em"
+                >Core Database Ideas</span
+              >
+            </p>
+            <ul style="color: #ffffff">
+              <li>Table: A collection of rows and columns.</li>
+              <li>Row: A single record in a table.</li>
+              <li>Column: A field in a table representing a data attribute.</li>
+              <li>Primary Key: A unique identifier for a row.</li>
+              <li>Foreign Key: A field that links one table to another.</li>
+            </ul>
+          </div>
+
+          <!-- Basic MySQL Commands -->
+          <h3 onclick="toggleContent('basicCommands')">Basic MySQL Commands</h3>
+          <div id="basicCommands" class="description">
+            <p>
+              <span style="color: #ffac1c; font-weight: 600; font-size: 1.2em"
+                >Essential Commands</span
+              >
+            </p>
+            <ul style="color: #ffffff">
+              <li><code>CREATE DATABASE</code>: Create a new database.</li>
+              <li><code>USE</code>: Select a database to work with.</li>
+              <li>
+                <code>CREATE TABLE</code>: Create a table with defined columns.
+              </li>
+              <li><code>INSERT INTO</code>: Add records to a table.</li>
+              <li><code>SELECT</code>: Retrieve data from a table.</li>
+            </ul>
+            <pre class="code-block">
+CREATE DATABASE my_database;
+USE my_database;
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100),
+  email VARCHAR(100)
+);
+INSERT INTO users (name, email) VALUES ('John Doe', 'john@example.com');
+SELECT * FROM users;</pre
+            >
+          </div>
+
+          <!-- MySQL Data Types -->
+          <h3 onclick="toggleContent('dataTypes')">MySQL Data Types</h3>
+          <div id="dataTypes" class="description">
+            <p>
+              <span style="color: #ffac1c; font-weight: 600; font-size: 1.2em"
+                >Types of Data</span
+              >
+            </p>
+            <ul style="color: #ffffff">
+              <li><b>INT:</b> Integer numbers.</li>
+              <li><b>VARCHAR:</b> Variable-length strings.</li>
+              <li><b>DATE:</b> Date values.</li>
+              <li><b>FLOAT:</b> Floating-point numbers.</li>
+            </ul>
+          </div>
+
+          <!-- Writing Queries -->
+          <h3 onclick="toggleContent('queries')">Writing Queries</h3>
+          <div id="queries" class="description">
+            <p>
+              <span style="color: #ffac1c; font-weight: 600; font-size: 1.2em"
+                >Retrieving Data</span
+              >
+            </p>
+            <pre class="code-block">
+SELECT * FROM users WHERE name = 'John';
+SELECT name, email FROM users ORDER BY name ASC;
+SELECT COUNT(*) FROM users;
+            </pre>
+          </div>
+
+          <!-- Joins in MySQL -->
+          <h3 onclick="toggleContent('joins')">Joins in MySQL</h3>
+          <div id="joins" class="description">
+            <p>
+              <span style="color: #ffac1c; font-weight: 600; font-size: 1.2em"
+                >Combining Tables</span
+              >
+            </p>
+            <pre class="code-block">
+SELECT orders.id, users.name, orders.total 
+FROM orders 
+JOIN users ON orders.user_id = users.id;
+            </pre>
+          </div>
+
+          <!-- More Topics -->
+          <h3 onclick="toggleContent('indexes')">Indexes</h3>
+          <div id="indexes" class="description">
+            <p>Indexes speed up queries on large tables. Create with:</p>
+            <pre class="code-block">
+CREATE INDEX idx_name ON users (name);
+            </pre>
+          </div>
+
+          <h3 onclick="toggleContent('transactions')">Transactions</h3>
+          <div id="transactions" class="description">
+            <p>Ensure data integrity with transactions:</p>
+            <pre class="code-block">
+START TRANSACTION;
+UPDATE accounts SET balance = balance - 100 WHERE id = 1;
+UPDATE accounts SET balance = balance + 100 WHERE id = 2;
+COMMIT;
+            </pre>
+          </div>
+
+          <!-- Practice Examples -->
+          <h3 onclick="toggleContent('practiceExamples')">Practice Examples</h3>
+          <div id="practiceExamples" class="description">
+            <p>Try these queries:</p>
+            <pre class="code-block">
+-- Retrieve all emails
+SELECT email FROM users;
+
+-- Get total number of users
+SELECT COUNT(*) FROM users;
+
+-- List all orders for a specific user
+SELECT * FROM orders WHERE user_id = 1;
+            </pre>
+          </div>
+
+          <!-- Conclusion -->
+          <h3 onclick="toggleContent('conclusion')">Conclusion</h3>
+          <div id="conclusion" class="description">
+            <p>
+              MySQL is a powerful database system. With practice, you'll be able
+              to manage, query, and optimize databases efficiently!
+            </p>
+          </div>
+        </div>
+        <footer>
+          <div class="inner-footer">
+            <p>Made by Ahmed Abu Seada</p>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script>
+      window.onload = function () {
+        const descriptions = document.querySelectorAll(".description");
+        descriptions.forEach((description) => {
+          description.style.display = "none";
+        });
+        const toggleBtn = document.querySelector(".toggle-btn");
+        toggleBtn.textContent = "<";
+      };
+
+      function toggleContent(elementId) {
+        const content = document.getElementById(elementId);
+        if (content.style.display === "none") {
+          content.style.display = "block";
+        } else {
+          content.style.display = "none";
+        }
+      }
+
+      function toggleSidebar() {
+        const sidebar = document.querySelector(".sidebar");
+        const toggleBtn = document.querySelector(".toggle-btn");
+
+        sidebar.classList.toggle("hidden");
+        toggleBtn.classList.toggle("open");
+
+        if (toggleBtn.classList.contains("open")) {
+          toggleBtn.textContent = ">";
+        } else {
+          toggleBtn.textContent = "<";
+        }
+      }
+
+      function toggleAllContent() {
+        const descriptions = document.querySelectorAll(".description");
+        const areAllClosed = Array.from(descriptions).every(
+          (desc) => desc.style.display === "none"
+        );
+
+        descriptions.forEach((description) => {
+          description.style.display = areAllClosed ? "block" : "none";
+        });
+      }
+    </script>
+  </body>
+</html>

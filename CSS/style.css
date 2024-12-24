@@ -73,6 +73,13 @@ header nav a:hover{
     background-color: var(--white);
     color: orange;
 }
+
+#clock {
+    font-size: 1.2em;
+    margin-left: 20px;
+    color: var(--white);
+    font-weight: bold;
+  }
 /* End header style */
 
 /* Start page style */

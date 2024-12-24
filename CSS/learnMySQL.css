@@ -311,3 +311,31 @@ footer .inner-footer {
 footer p {
   margin: 0;
 }
+
+@media (max-width: 768px) {
+  .sidebar,
+  .toggle-btn {
+    display: none;
+  }
+
+  header {
+    display: none;
+  }
+
+  .content {
+    margin-left: 0;
+    padding: 0 10px;
+  }
+
+  .content .main h3 {
+    font-size: 18px;
+  }
+
+  footer {
+    height: 30px;
+  }
+
+  .content .main .description {
+    display: none;
+  }
+}

@@ -26,12 +26,13 @@
       <button class="toggle-btn" onclick="toggleSidebar()">></button>
       <aside class="sidebar">
         <ul>
-          <li><a href="#mysqlIntro">Introduction to MySQL</a></li>
+          <li><a href="#mySqlIntroDescription">Introduction to MySQL</a></li>
           <li><a href="#databaseConcepts">Database Concepts</a></li>
           <li><a href="#basicCommands">Basic MySQL Commands</a></li>
           <li><a href="#dataTypes">MySQL Data Types</a></li>
           <li><a href="#queries">Writing Queries</a></li>
           <li><a href="#joins">Joins in MySQL</a></li>
+          <li><a href="#mySqlRDBMSDescription">MySQL RDBMS Description</a></li>
           <li><a href="#indexes">Indexes</a></li>
           <li><a href="#transactions">Transactions</a></li>
           <li><a href="#backupRestore">Backup and Restore</a></li>
@@ -51,20 +52,38 @@
         </div>
 
           <!-- Introduction to MySQL -->
-          <h3 onclick="toggleContent('mysqlIntro')">Introduction to MySQL</h3>
-          <div id="mysqlIntro" class="description">
-            <p>
-              <span style="color: #ffac1c; font-weight: 600; font-size: 1.2em"
-                >What is MySQL?</span
-              >
-            </p>
-            <p>
-              MySQL is an open-source relational database management system
-              (RDBMS) that uses Structured Query Language (SQL) to manage and
-              manipulate data. It is widely used for web applications and data
-              storage.
-            </p>
+          <h3 onclick="toggleContent('mySqlIntroDescription')" style="font-weight: 700; color: #ffffff;">MySQL
+            Introduction</h3>
+          <div id="mySqlIntroDescription" class="description">
+            <p><span class="highlight">What is MySQL?</span></p>
+            <ul>
+              <li>MySQL is a relational database management system.</li>
+              <li>MySQL is open-source.</li>
+              <li>MySQL is free.</li>
+              <li>MySQL is ideal for both small and large applications.</li>
+              <li>MySQL is very fast, reliable, scalable, and easy to use.</li>
+              <li>MySQL is cross-platform.</li>
+              <li>MySQL is compliant with the ANSI SQL standard.</li>
+              <li>MySQL was first released in 1995.</li>
+              <li>MySQL is developed, distributed, and supported by Oracle Corporation.</li>
+              <li>MySQL is named after co-founder Ulf Michael "Monty" Widenius's daughter: My.</li>
+            </ul>
+            <p><span class="highlight">Who Uses MySQL?</span></p>
+            <ul>
+              <li>Huge websites like Facebook, Twitter, Airbnb, Booking.com, Uber, GitHub, YouTube, etc.</li>
+              <li>Content Management Systems like WordPress, Drupal, Joomla!, Contao, etc.</li>
+              <li>A very large number of web developers around the world.</li>
+            </ul>
+            <p><span class="highlight">Show Data On Your Web Site</span></p>
+            <ul>
+              <li>An RDBMS database program (like MySQL).</li>
+              <li>A server-side scripting language, like PHP.</li>
+              <li>To use SQL to get the data you want.</li>
+              <li>To use HTML / CSS to style the page.</li>
+            </ul>
           </div>
+    
+          
 
           <!-- Database Concepts -->
           <h3 onclick="toggleContent('databaseConcepts')">Database Concepts</h3>
@@ -157,6 +176,152 @@ SELECT orders.id, users.name, orders.total
 FROM orders 
 JOIN users ON orders.user_id = users.id;
             </pre>
+          </div>
+
+          <h3 onclick="toggleContent('mySqlRDBMSDescription')" style="font-weight: 700; color: #ffffff;">MySQL RDBMS</h3>
+          <div id="mySqlRDBMSDescription" class="description">
+            <p><span class="highlight">What is RDBMS?</span></p>
+            <ul>
+              <li>RDBMS stands for Relational Database Management System.</li>
+              <li>RDBMS is a program used to maintain a relational database.</li>
+              <li>RDBMS is the basis for all modern database systems such as MySQL, Microsoft SQL Server, Oracle, and
+                Microsoft Access.
+              </li>
+              <li>RDBMS uses SQL queries to access the data in the database.</li>
+            </ul>
+            <p><span class="highlight">What is a Database Table?</span></p>
+            <ul>
+              <li>A table is a collection of related data entries, and it consists of columns and rows.</li>
+              <li>A column holds specific information about every record in the table.</li>
+              <li>A record (or row) is each individual entry that exists in a table.</li>
+              <li>Look at a selection from the Northwind "Customers" table:</li>
+            </ul>
+              <table style="width: 100%; border-collapse: collapse; margin-top: 10px; margin-bottom: 10px;">
+                <thead>
+                <tr style="background-color: #f8f8f8;">
+                  <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">CustomerID</th>
+                  <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">CustomerName</th>
+                  <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">ContactName</th>
+                  <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Address</th>
+                  <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">City</th>
+                  <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">PostalCode</th>
+                  <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Country</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td style="border: 1px solid #ddd; padding: 8px;">1</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Alfreds Futterkiste</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Maria Anders</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Obere Str. 57</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Berlin</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">12209</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Germany</td>
+                </tr>
+                <tr style="background-color: #f8f8f8;">
+                  <td style="border: 1px solid #ddd; padding: 8px;">2</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Ana Trujillo Emparedados y helados</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Ana Trujillo</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Avda. de la Constitución 2222</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">México D.F.</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">05021</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Mexico</td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid #ddd; padding: 8px;">3</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Antonio Moreno Taquería</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Antonio Moreno</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Mataderos 2312</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">México D.F.</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">05023</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Mexico</td>
+                </tr>
+                <tr style="background-color: #f8f8f8;">
+                  <td style="border: 1px solid #ddd; padding: 8px;">4</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Around the Horn</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Thomas Hardy</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">120 Hanover Sq.</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">London</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">WA1 1DP</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">UK</td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid #ddd; padding: 8px;">5</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Berglunds snabbköp</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Christina Berglund</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Berguvsvägen 8</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Luleå</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">S-958 22</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Sweden</td>
+                </tr>
+                </tbody>
+              </table>
+            <p class="highlight">What is a Relational Database?</p>
+            <ul>
+              <li>A relational database defines database relationships in the form of tables. The tables are related to each other - based on data common to each.</li>
+              <li>Look at the following three tables "Customers", "Orders", and "Shippers" from the Northwind database:</li>
+              <h2 class="highlight">Customers Table</h2>
+              <table style="width: 100%; border-collapse: collapse; margin-bottom: 10px; margin-top: 10px;">
+                <thead>
+                <tr style="background-color: #f8f8f8;">
+                  <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">CustomerID</th>
+                  <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">CustomerName</th>
+                  <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">ContactName</th>
+                  <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Address</th>
+                  <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">City</th>
+                  <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">PostalCode</th>
+                  <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Country</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td style="border: 1px solid #ddd; padding: 8px;">1</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Alfreds Futterkiste</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Maria Anders</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Obere Str. 57</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Berlin</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">12209</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Germany</td>
+                </tr>
+                <tr style="background-color: #f8f8f8;">
+                  <td style="border: 1px solid #ddd; padding: 8px;">2</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Ana Trujillo Emparedados y helados</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Ana Trujillo</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Avda. de la Constitución 2222</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">México D.F.</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">05021</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Mexico</td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid #ddd; padding: 8px;">3</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Antonio Moreno Taquería</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Antonio Moreno</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Mataderos 2312</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">México D.F.</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">05023</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Mexico</td>
+                </tr>
+                <tr style="background-color: #f8f8f8;">
+                  <td style="border: 1px solid #ddd; padding: 8px;">4</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Around the Horn</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Thomas Hardy</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">120 Hanover Sq.</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">London</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">WA1 1DP</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">UK</td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid #ddd; padding: 8px;">5</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Berglunds snabbköp</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Christina Berglund</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Berguvsvägen 8</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Luleå</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">S-958 22</td>
+                  <td style="border: 1px solid #ddd; padding: 8px;">Sweden</td>
+                </tr>
+                </tbody>
+              </table>
+            </ul>
           </div>
 
           <!-- More Topics -->
